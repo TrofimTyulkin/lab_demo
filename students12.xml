@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<students>
+    <student>
+        <name>Tom</name>
+        <id>1</id>
+    </student>
+    <student>
+        <name>trofim</name>
+        <id>11</id>
+    </student>
+    <student>
+        <name>trofim</name>
+        <id>111</id>
+    </student>
+</students>
