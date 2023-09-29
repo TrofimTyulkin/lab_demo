@@ -2,19 +2,16 @@ package me.demo.service;
 
 import me.demo.DAO.StudentDAO;
 import me.demo.DAO.StudentList;
-import org.springframework.stereotype.Service;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Service
+//@Service
 public class StudentServiceXML implements StudentService {
     @Override
     public StudentDAO getStudent(int id) {
