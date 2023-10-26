@@ -1,7 +1,7 @@
 package me.demo.service;
 
 import me.demo.DAO.StudentDAO;
-import me.demo.DAO.StudentList;
+import me.demo.DTO.StudentFull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 //@Service
 public class StudentServiceCollection implements StudentService {
-    List<StudentDAO> studentDAOS = new ArrayList<StudentDAO>();
+    List<StudentDAO> studentDAOS = new ArrayList<>();
 
     public List<StudentDAO> getStudents() {
         return studentDAOS;
@@ -35,10 +35,10 @@ public class StudentServiceCollection implements StudentService {
     }
 
     @Override
-    public StudentDAO editStudent(int id, String name) {
-        return studentDAOS.stream().filter(studentDAO -> studentDAO.getId() == id).findFirst()
+    public StudentDAO editStudent(StudentFull student) {
+        return studentDAOS.stream().filter(studentDAO -> studentDAO.getId() == student.id()).findFirst()
                 .map(studentDAO -> {
-                    studentDAO.setName(name);
+                    studentDAO.setName(student.name());
                     return studentDAO;
                 }).orElse(new StudentDAO());
     }

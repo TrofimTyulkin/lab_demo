@@ -2,6 +2,7 @@ package me.demo.service;
 
 import lombok.RequiredArgsConstructor;
 import me.demo.DAO.StudentDAO;
+import me.demo.DTO.StudentFull;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -36,10 +37,18 @@ public class StudentServiceDB implements StudentService {
     }
 
     @Override
-    public StudentDAO editStudent(int id, String name) {
-        StudentDAO student = getStudent(id);
-        deleteStudent(id);
-        student.setName(name);
-        return repository.save(student);
+    public StudentDAO editStudent(StudentFull student) {
+        StudentDAO studentDAO = getStudent(student.id());
+        deleteStudent(student.id());
+        studentDAO.setName(student.name());
+        studentDAO.setSurname(student.surname());
+        studentDAO.setFath_name(student.fath_name());
+        studentDAO.setSpec(student.spec());
+        studentDAO.setCity(student.city());
+        studentDAO.setCountry(student.country());
+        studentDAO.setAge(student.age());
+        studentDAO.setId(student.id());
+        System.err.println(studentDAO.toString());
+        return repository.save(studentDAO);
     }
 }

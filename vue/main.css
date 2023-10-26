@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+body{
+    font-family: 'Play', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+/*  background-color: #FFDDAF;*/
+    color: red;
+    margin-left: 15px;
+}
+
+.student *{
+margin: 0;
+display: flex;
+}
+.student {
+  width:600px;
+}
+#student :hover *{
+  background-color: #17171c47;
+}
+div :nth-child(2n + 3 of .table) *{
+background-color: #17171a;
+}
+
+div :nth-child(2n + 1 of .student) *{
+  width:600px;
+  background-color: #2300f205;
+}
+
+.header{
+display: flex;
+}
+.header div{
+    width: 300px;
+}
+.student_card *{
+    width: 300px;
+}
+.student div{
+    width: 300px;
+}
+.student_data_row{
+    display: flex;
+}
+.student_data_row div{
+    margin-right: 15px;
+}
+#btn_edit{
+background-color: #17171a;
+}
+
+.material-symbols-outlined {
+  width: 50px;
+  color: red;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+input{
+  margin: 4px;
+}
+.button{
+  margin-right: 30px;
+}

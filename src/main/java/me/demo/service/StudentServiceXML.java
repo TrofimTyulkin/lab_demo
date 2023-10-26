@@ -2,6 +2,8 @@ package me.demo.service;
 
 import me.demo.DAO.StudentDAO;
 import me.demo.DAO.StudentList;
+import me.demo.DTO.StudentFull;
+import org.springframework.stereotype.Service;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -63,12 +65,12 @@ public class StudentServiceXML implements StudentService {
     }
 
     @Override
-    public StudentDAO editStudent(int id, String name) {
+    public StudentDAO editStudent(StudentFull student) {
         List<StudentDAO> list = getStudentsFromXml().getStudents();
 
-        return list.stream().filter(studentDAO -> studentDAO.getId() == id).findFirst()
+        return list.stream().filter(studentDAO -> studentDAO.getId() == student.id()).findFirst()
                 .map(studentDAO -> {
-                    studentDAO.setName(name);
+                    studentDAO.setName(student.name());
                     StudentList list1 = new StudentList();
                     list1.setStudents(list);
                     System.err.println("SAVING..........");
